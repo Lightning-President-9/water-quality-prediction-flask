@@ -1,0 +1,258 @@
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    background-color: #1f2933;
+    color: #ffffff;
+    padding: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* INFO CARD (LIKE NETFLIX LINKS BLOCK) */
+.info-card {
+    background-color: #ffffff;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.info-card h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.info-card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.info-card li {
+    margin-bottom: 6px;
+}
+
+.info-card a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+.disclaimer {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #b91c1c;
+}
+
+/* CONTROLS */
+.controls {
+    background-color: #ffffff;
+    margin: 0 25px 25px 25px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.control-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-box label {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.controls input {
+    padding: 8px;
+    font-size: 14px;
+    min-width: 140px;
+}
+
+.controls button {
+    padding: 9px 18px;
+    font-size: 14px;
+    background-color: #1f2933;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #111827;
+}
+
+/* DASHBOARD GRID (NETFLIX STYLE) */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+/* CARDS / CHART CONTAINERS */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 420px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* TABLE */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.data-table th {
+    background-color: #1f2933;
+    color: #ffffff;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table td {
+    padding: 8px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.good {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.bad {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* GAUGES */
+.gauge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+/* Each Plotly gauge wrapper */
+.gauge-grid > div {
+    width: 100%;
+    max-width: 100%;
+    min-height: 260px;
+}
+
+/* PLOTLY SAFETY */
+#radarChart,
+#gaugeCharts,
+#bulletCharts {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* RESPONSIVE: TABLETS */
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        gap: 12px;
+    }
+}
+
+/* RESPONSIVE: MOBILE */
+@media (max-width: 600px) {
+
+    .header {
+        padding: 18px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .info-card {
+        margin: 15px;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .controls {
+        margin: 0 15px 15px 15px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controls input,
+    .controls button {
+        width: 100%;
+    }
+
+    .dashboard {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .card {
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .data-table {
+        font-size: 12px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 6px;
+    }
+
+    .gauge-grid {
+        grid-template-columns: 1fr;
+    }
+}

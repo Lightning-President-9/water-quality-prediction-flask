@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Water Quality Prediction – Visualization Dashboard</title>
+    <link rel="icon" href="{{ url_for('static', filename='head-logo.png') }}">
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <h1>Water Quality Prediction – Interactive Dashboard</h1>
+    <p>Machine learning–based visualization of river water pollutant levels</p>
+</header>
+
+<!-- INFO / LINKS -->
+<section class="info-card">
+    <h2>About This Project</h2>
+
+    <p>
+        This is a personal machine learning project focused on predicting
+        river water quality parameters using historical monitoring data
+        and interactive visual analytics.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Dataset:</strong>
+            <a href="https://www.kaggle.com/datasets/vbmokin/wq-southern-bug-river-01052021" target="_blank">
+                Southern Bug River Water Quality (Kaggle)
+            </a>
+        </li>
+        <li>
+            <strong>Model:</strong> Random Forest Regressor (Multi-Output)
+        </li>
+        <li>
+            <strong>Notebook:</strong>
+            <a href="https://github.com/Lightning-President-9/Water-Quality-Prediction/blob/main/Week_2/Water_Quality_Prediction.ipynb" target="_blank">
+                Training & Analysis
+            </a>
+        </li>
+        <li>
+            <strong>Parameters Description PDF:</strong>
+            <a href="https://github.com/Lightning-President-9/Water-Quality-Prediction/blob/main/Parameters_WQM_RMS.pdf" target="_blank">
+                Parameters PDF
+            </a>
+        </li>
+        <li>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/Lightning-President-9/Water-Quality-Prediction" target="_blank">
+                Project Repository
+            </a>
+        </li>
+    </ul>
+
+    <p class="disclaimer">
+        ⚠ <strong>Disclaimer:</strong> This is a personal academic project.
+        Predictions are indicative and must not replace certified laboratory testing.
+    </p>
+</section>
+
+<!-- CONTROLS -->
+<section class="controls">
+    <div class="control-box">
+        <label>Year (4 digits)</label>
+        <input type="number" id="year" min="1000" max="9999" value="2015">
+    </div>
+
+    <div class="control-box">
+        <label>Station ID (1–22)</label>
+        <input type="number" id="station" min="1" max="22" value="4">
+    </div>
+
+    <div class="control-box">
+        <button onclick="runPrediction()">Run Prediction</button>
+    </div>
+</section>
+
+<!-- DASHBOARD GRID -->
+<main class="dashboard">
+
+    <!-- TABLE -->
+    <div class="card">
+        <h2>Prediction Summary</h2>
+        <div id="table"></div>
+    </div>
+
+    <!-- RADAR -->
+    <div class="card">
+        <h2>Radar Chart</h2>
+        <div id="radarChart"></div>
+    </div>
+
+    <!-- GAUGES -->
+    <div class="card">
+        <h2>Gauge Charts</h2>
+        <div id="gaugeCharts" class="gauge-grid"></div>
+    </div>
+
+    <!-- BULLETS -->
+    <div class="card">
+        <h2>Bullet Charts</h2>
+        <div id="bulletCharts"></div>
+    </div>
+
+</main>
+
+<!-- SCRIPT -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
