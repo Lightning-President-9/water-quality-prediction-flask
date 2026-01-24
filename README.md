@@ -82,7 +82,7 @@ https://github.com/Lightning-President-9/Water-Quality-Prediction/blob/main/Para
 
 Deployed Link:
 
-...
+https://water-quality-prediction-flask.onrender.com
 
 ---
 
