@@ -7,7 +7,7 @@ This project integrates **data analysis, machine learning, and interactive visua
 
 ## Project Overview
 
-This is a **personal academic project** developed to explore how machine learning models can be applied to environmental datasets.
+This is a **personal project** developed to explore how machine learning models can be applied to environmental datasets.
 
 A **multi-output Random Forest Regressor** is trained on historical river water quality data and used to predict key pollutant concentrations for selected monitoring stations and years.  
 The results are presented through interactive Plotly visualizations in a web-based dashboard.
