@@ -142,13 +142,6 @@ def predict():
         "bullets": bullets
     })
 
-@app.route("/service-status", methods=["GET"])
-def status():
-    return jsonify({
-        "status": "ok",
-        "service": "Water Quality Prediction Service API"
-    })
-
 # MAIN
 if __name__ == "__main__":
     app.run()
